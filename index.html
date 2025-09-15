@@ -302,7 +302,8 @@
             position: absolute;
             width: 100%;
             left: 0;
-            bottom: 10px;
+            /* Move the text 2cm lower from the bottom of the circle */
+            bottom: -0.5cm;
             font-size: 18px;
             color: #ededed;
         }
@@ -463,20 +464,62 @@
         min-width: 0;
     }
 }
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    color: #0ef;
+    cursor: pointer;
+    z-index: 101;
+}
+@media (max-width: 900px) {
+    .menu-icon {
+        display: block;
+        position: absolute;
+        right: 30px;
+        top: 25px;
+    }
+    .navbar {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        background: #051129;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 0;
+        display: none;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        border-radius: 0 0 10px 10px;
+        z-index: 100;
+    }
+    .navbar.show {
+        display: flex;
+    }
+    .navbar a {
+        margin: 15px 20px;
+        opacity: 1 !important;
+        animation: none !important;
+    }
+}
     </style>
 </head>
 <body>
     <header class="header">
         <a href="#" class="logo">Portfolio</a>
-        <nav class="navbar">
-            <a href="#home" style="--i:1" class="active">Home</a>
-            <a href="#about" style="--i:2">About</a>
-            <a href="#skills" style="--i:3">Skills</a>
-            <a href="#services" style="--i:4">Services</a>
-            <a href="#hobbies" style="--i:5">Hobbies</a>
-            <a href="#photos" style="--i:6">Photos</a>
-            <a href="#contact" style="--i:7">Contact</a>
-        </nav>
+        <!-- Hamburger Icon for Mobile -->
+        <div class="menu-icon" id="menu-icon">
+        <i class='bx bx-menu'></i>
+    </div>
+    <nav class="navbar" id="navbar">
+        <a href="#home" style="--i:1" class="active">Home</a>
+        <a href="#about" style="--i:2">About</a>
+        <a href="#skills" style="--i:3">Skills</a>
+        <a href="#services" style="--i:4">Services</a>
+        <a href="#hobbies" style="--i:5">Hobbies</a>
+        <a href="#photos" style="--i:6">Photos</a>
+        <a href="#contact" style="--i:7">Contact</a>
+        <a href="assets/cv.pdf" download="MILDRED EMBEYWA CV.pdf" class="cv-btn" style="--i:8">Download CV</a>
+    </nav>
     </header>
     <section class="home" id="home">
         <div class="home-content">
@@ -486,7 +529,7 @@
             <p>I'm a web Designer with extensive experience for over 2 years</p>
             <div class="home-sci">
                 <a href="https://www.facebook.com/sgkardy" style="--i:6" target="_blank"><i class='bx bxl-facebook-square'></i></a>
-                <a href="https://www.instagram.com/kardyred_4" style="--i:7" target="_blank"><i class='bx bxl-instagram'></i></a>
+                <a href="https://www.instagram.com/blacklover_719" style="--i:7" target="_blank"><i class='bx bxl-instagram'></i></a>
                 <a href="https://wa.me/254113833466" style="--i:8" target="_blank"><i class='bx bxl-whatsapp'></i></a>
                 <a href="https://www.facebook.com/Web Developer" style="--i:9" target="_blank"><i class='bx bxl-facebook'></i></a>
                 <a href="https://www.tiktok.com/@blacklover_719" style="--i:10" target="_blank"><i class='bx bxl-tiktok'></i></a>
@@ -549,9 +592,34 @@
                 <div class="progress-line css"><span></span></div>
             </div>
             <div class="bars">
+                <i class='bx bxl-tailwind CSS'></i>
+                <div class="info"><span>Tailwind CSS</span></div>
+                <div class="progress-line tailwind css"><span></span></div>
+            </div>
+            <div class="bars">
                 <i class='bx bxl-javascript'></i>
                 <div class="info"><span>Javascript</span></div>
                 <div class="progress-line javascript"><span></span></div>
+            </div>
+            <div class="bars">
+                <i class='bx bxl-typescript'></i>
+                <div class="info"><span>Typescript</span></div>
+                <div class="progress-line typescript"><span></span></div>
+            </div>
+            <div class="bars">
+                <i class='bx bxl-node.js'></i>
+                <div class="info"><span>Node.js</span></div>
+                <div class="progress-line node.js"><span></span></div>
+            </div>
+            <div class="bars">
+                <i class='bx bxl-MySQL'></i>
+                <div class="info"><span>MySQL</span></div>
+                <div class="progress-line MySQL"><span></span></div>
+            </div>
+            <div class="bars">
+                <i class='bx bxl-c#'></i>
+                <div class="info"><span>C#</span></div>
+                <div class="progress-line c#"><span></span></div>
             </div>
             <div class="bars">
                 <i class='bx bxl-python'></i>
@@ -563,7 +631,13 @@
                 <div class="info"><span>React</span></div>
                 <div class="progress-line react"><span></span></div>
             </div>
+            <div class="bars">
+                <i class='bx c++'></i>
+                <div class="info"><span>C++</span></div>
+                <div class="progress-line c++"><span></span></div>
+            </div>
         </div>
+        
         <div class="container1">
             <h1 class="heading1">Professional Skills</h1>
             <div class="radial-bars">
@@ -573,7 +647,7 @@
                         <circle cx="100" cy="100" r="80" stroke="#0ef" stroke-width="15" fill="none"
                             stroke-dasharray="502" stroke-dashoffset="175" style="transition:stroke-dashoffset 1s;"/>
                     </svg>
-                    <div class="percentage">65%</div>
+                    <div class="percentage">85%</div>
                     <div class="text">Communication</div>
                 </div>
                 <div class="radial-bar">
@@ -655,7 +729,7 @@
             <h4>Let's connect and discuss how I can help you with your next project!✨</h4>
             <div class="contact-list">
                 <ul>
-                    <li><i class='bx bxs-send'></i> kardyred719@gmail.com</li>
+                    <li><i class='bx bxs-send'></i> mildredembeywa7@gmail.com</li>
                 </ul>
             </div>
             <div class="contact-icons">
@@ -680,6 +754,20 @@
             backDelay: 1000,
             loop: true
         });
+        // Dropdown menu functionality
+const menuIcon = document.getElementById('menu-icon');
+const navbar = document.getElementById('navbar');
+menuIcon.addEventListener('click', () => {
+    navbar.classList.toggle('show');
+});
+// Optional: Hide menu when a link is clicked (for better UX)
+document.querySelectorAll('.navbar a').forEach(link => {
+    link.addEventListener('click', () => {
+        if(window.innerWidth <= 900){
+            navbar.classList.remove('show');
+        }
+    });
+});
     </script>
 </body>
 </html>
